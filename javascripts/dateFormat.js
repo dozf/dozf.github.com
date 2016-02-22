@@ -53,7 +53,7 @@ function showNowDate(){
 	span=document.getElementById("nowDateId");//现在时刻
 	alert(nowDate);
 	span.innerHTML = nowDate;
-	setTimeout('getDate()',1000);
+	setTimeout('showNowDate()',1000);//每一秒执行一次
 }
 showNowDate();
 
