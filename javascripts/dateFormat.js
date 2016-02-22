@@ -49,11 +49,11 @@ function ChangeTimeToString ( DateIn )
 
 //显示现在时刻
 function showNowDate(){
-  var nowDate = ChangeTimeToString(new Date());
-  alert("nowDate:"+nowDate);
+	var nowDate = ChangeTimeToString(new Date());
 	span=document.getElementById("nowDateId");//现在时刻
 	alert(nowDate);
 	span.innerHTML = nowDate;
+	setTimeout('getDate()',1000);
 }
 showNowDate();
 
