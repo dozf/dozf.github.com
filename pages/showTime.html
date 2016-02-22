@@ -6,12 +6,15 @@
 </head>
 <body>
 	<script type="text/javascript">
-	function getDate(){
-	    var thedate = new Date();
-	    var lunchTime = 12*60*60; //中饭时间
-		var dinnerTime = 17*60*60 + 30*60; //晚饭时间
-	    var h=thedate.getHours();
-	    var mins=thedate.getMinutes();
+		function getDate(){
+			//使按钮不可以点击
+      //document.getElementById("showtimeId").disabled = true;
+      document.getElementById("showtimeId").style.display = 'none';
+			var thedate = new Date();
+			var lunchTime = 12*60*60; //中饭时间
+			var dinnerTime = 17*60*60 + 30*60; //晚饭时间
+			var h=thedate.getHours();
+			var mins=thedate.getMinutes();
 	    var s=thedate.getSeconds();
 	    var nowTime=h*60*60+mins*60+s; 
 	    span1=document.getElementById("word");//显示字
@@ -21,7 +24,7 @@
 	    var hour2=17-h;
 	    var minute=60-mins;
 	    var second=60-s;
-					//吃中饭
+	   //吃中饭
 					if(lunchTime >= nowTime) {
 						span1.innerHTML = "想吃饭先好好工作吧，距离吃中饭还剩 ";
 						if(mins>30){
@@ -54,11 +57,11 @@
 						setTimeout('getDate()',1000);
 					
 					} 
-	           }
+		}
 	</script>
 	<center><h3>好员工</h3></center>
     <div>
-    <input type="button" value="点击查看吃饭时间" onclick="getDate()"/>
+    <input id="showtimeId" type="button" value="点击查看吃饭时间" style="background-color:green;padding:4px;width:200px;" onclick="getDate()"/>
     <span id="word"></span><span id="time" style="font-size:50px;color:red;width:150px"></span><span id="unit"></span>
     </div>
 </body>
