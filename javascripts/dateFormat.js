@@ -41,3 +41,10 @@ Date.prototype.pattern=function(fmt) {
   } 
 return fmt; 
 } 
+
+//显示现在时刻
+function showNowDate(){
+  var time2 = new Date().Format("yyyy-MM-dd EEE hh:mm:ss");  
+  alert("time2:"+time2);
+}
+
