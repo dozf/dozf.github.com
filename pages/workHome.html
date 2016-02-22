@@ -3,10 +3,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>工作主页</title>
+<script src="../javascripts/dateFormat.js.js"></script>
 </head>
 <body>
 	<script type="text/javascript">
-	
+		var nowDate = new Date().Format("yyyy-MM-dd EEE hh:mm:ss");
+		span=document.getElementById("nowDateId");//现在时刻
+		span2.innerHTML = nowDate;
 	</script>
+	<span id="nowDateId"></span>
 </body>
 </html>
