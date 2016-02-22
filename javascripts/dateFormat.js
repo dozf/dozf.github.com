@@ -48,3 +48,6 @@ function showNowDate(){
   alert("time2:"+time2);
 }
 
+function getStrings(){
+  return "nihao";
+}
