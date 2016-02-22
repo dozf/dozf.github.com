@@ -1,4 +1,4 @@
-a:link,a:visited
+.mylink a:link,a:visited
 {
 display:block;
 font-weight:bold;
@@ -12,7 +12,7 @@ padding:4px;
 text-decoration:none;
 }
 
-a:hover,a:active
+.mylink a:hover,a:active
 {
 background-color:#7A991A;
 }
