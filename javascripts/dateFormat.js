@@ -44,10 +44,13 @@ return fmt;
 
 //显示现在时刻
 function showNowDate(){
-  var time2 = new Date().Format("yyyy-MM-dd EEE hh:mm:ss");  
-  alert("time2:"+time2);
+  var nowDate = new Date().Format("yyyy-MM-dd EEE hh:mm:ss");
+  alert("nowDate:"+nowDate);
+	span=document.getElementById("nowDateId");//现在时刻
+	alert(nowDate);
+	span.innerHTML = nowDate;
 }
-
+showNowDate();
 function getStrings(){
   return "nihao";
 }
