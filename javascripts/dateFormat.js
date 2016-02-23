@@ -1,5 +1,4 @@
 // 将日期类型转换成字符串型格式 yyyy-MM-dd hh:mm:ss
- 
 function ChangeTimeToString ( DateIn )
 {
     var Year = 0 ;
@@ -55,4 +54,12 @@ function showNowDate(){
 	setTimeout('showNowDate()',1000);//每一秒执行一次
 }
 showNowDate();
-
+//显示星几的图片
+function getWeek(){
+	var week=new Date().getDay();//0表示星期日
+	var w_array= new Array("../images/weeks/0.jpg","../images/weeks/1.jpg","../images/weeks/2.jpg","../images/weeks/3.jpg","../images/weeks/4.jpg","../images/weeks/5.jpg","../images/weeks/6.jpg");
+	pic=document.getElementById("picId");//显示图片
+	pic.src=w_array[week];
+	setInterval('getWeek()',1000);
+}
+getWeek();
