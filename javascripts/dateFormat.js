@@ -48,9 +48,11 @@ function ChangeTimeToString ( DateIn )
 
 //显示现在时刻
 function showNowDate(){
+	//显示现在时刻
 	var nowDate = ChangeTimeToString(new Date());
 	span=document.getElementById("nowDateId");
 	span.innerHTML = nowDate;//插入现在时刻
+	getWeek();
 	setTimeout('showNowDate()',1000);//每一秒执行一次
 }
 showNowDate();
@@ -60,6 +62,5 @@ function getWeek(){
 	var w_array= new Array("../images/weeks/0.png","../images/weeks/1.png","../images/weeks/2.png","../images/weeks/3.png","../images/weeks/4.png","../images/weeks/5.png","../images/weeks/6.png");
 	pic=document.getElementById("picId");//显示图片
 	pic.src=w_array[week];
-	setTimeout('getWeek()',5000);//每5秒执行一次
 }
-getWeek();
+
