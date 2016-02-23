@@ -57,7 +57,7 @@ showNowDate();
 //显示星几的图片
 function getWeek(){
 	var week=new Date().getDay();//0表示星期日
-	var w_array= new Array("../images/weeks/0.jpg","../images/weeks/1.jpg","../images/weeks/2.jpg","../images/weeks/3.jpg","../images/weeks/4.jpg","../images/weeks/5.jpg","../images/weeks/6.jpg");
+	var w_array= new Array("../images/weeks/0.png","../images/weeks/1.png","../images/weeks/2.png","../images/weeks/3.png","../images/weeks/4.png","../images/weeks/5.png","../images/weeks/6.png");
 	pic=document.getElementById("picId");//显示图片
 	pic.src=w_array[week];
 	setInterval('getWeek()',1000);
