@@ -18,5 +18,5 @@ background-color:#7A991A;
 }
 
 #urlLinkId{height:400px;width:450px; position:relative; margin:10px auto;}
-#urlLinkId a{position:absolute;top:0px;left:0px;color:#0000FF;font-weight:bold;padding:3px 6px;}
-#urlLinkId a:hover{border:1px solid #eee;background:#000;border-radius:5px;}
+#urlLinkId a{position:absolute;top:0px;left:0px;color:#FF3333;font-weight:bold;padding:3px 6px;}
+#urlLinkId a:hover{border:1px solid #eee;background:#FF8800;border-radius:5px;}
