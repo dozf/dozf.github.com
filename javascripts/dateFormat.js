@@ -60,6 +60,6 @@ function getWeek(){
 	var w_array= new Array("../images/weeks/0.png","../images/weeks/1.png","../images/weeks/2.png","../images/weeks/3.png","../images/weeks/4.png","../images/weeks/5.png","../images/weeks/6.png");
 	pic=document.getElementById("picId");//显示图片
 	pic.src=w_array[week];
-	setInterval('getWeek()',1000);
+	setTimeout('getWeek()',5000);//每5秒执行一次
 }
 getWeek();
