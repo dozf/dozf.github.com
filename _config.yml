@@ -4,12 +4,11 @@
 
 # Site
 title: dozf的博客
-subtitle: 随心
+subtitle: Dont't be the same,be better!
 description: 
 author: dozf
 language: zh-Hans
 timezone:
-keywords: java,js,redis
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
