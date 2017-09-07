@@ -19,6 +19,8 @@ $ git config --list
 $ git config -e 默认是编辑仓库级的配置文件
 ```
 
+<!-- more -->
+
 ## 二、分支
 查看分支：
 ```bash
@@ -72,5 +74,5 @@ $ git reset --hard 3628164
 当然还能重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
 
 ### 想了解更多，可以去看相关资料：
-* [Git](http://git-scm.com/book/zh/v2)
+* [Git中文文档](http://git-scm.com/book/zh/v2)
 * [Git教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
