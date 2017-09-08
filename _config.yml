@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://github.com/dozf
+url: https://dozf.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -90,6 +90,19 @@ deploy:
   repo: git@github.com:dozf/dozf.github.io.git
   branch: master
 
+# Extensions
+Plugins:
+- hexo-generator-feed
+- hexo-generator-sitemap
+#Feed Atom
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+#sitemap
+sitemap:
+  path: sitemap.xml  
+  
 jsonContent:
   meta: false
   pages: false
