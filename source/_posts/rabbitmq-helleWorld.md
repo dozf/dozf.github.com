@@ -7,13 +7,13 @@ tags: [技术, RabbitMQ]
 ---
 
 ## 一、专业术语介绍
-### 1. 生产者：
+#### 1. 生产者
 生产者只发送。发送消息的程序称之为一个生产者。
 <div align=center>
 ![](/assets/images/blogs/rabbitmq/consumer.png)
 </div>
 
-### 2.队列
+#### 2.队列
 队列就好比邮箱。虽然消息通过 RabbitMQ 在你的应用中传递，但是它们只能存储在队列中。队列只受主机的内存和磁盘的限制，它本质上是一个大的消息缓冲区。多个生产者可以将消息发送到同一个队列中，多个消费者也可以只从同一个队列接收数据。队列用下面的图表示：
 <div align=center>
 ![](/assets/images/blogs/rabbitmq/queue.png)
@@ -21,7 +21,7 @@ tags: [技术, RabbitMQ]
 
 <!-- more -->
 
-### 3. 消费者
+#### 3. 消费者
 等待接收消息的程序是一个消费者。
 <div align=center>
 ![](/assets/images/blogs/rabbitmq/consumer.png)
@@ -31,7 +31,6 @@ tags: [技术, RabbitMQ]
 生产者，消费者和队列（RabbitMQ）不必部署在同一台机器上。实际在生产环境的大多数应用中，他们都是分开部署的。
 
 ## 二、“Hello World”（使用Java客户端）
----
 在下图中，“P”是我们的生产者，“C”是我们的消费者。中间的框是队列代表消费者的消息缓冲区。
 <div align=center>
 ![](/assets/images/blogs/rabbitmq/java-one.png)
