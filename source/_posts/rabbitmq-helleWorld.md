@@ -121,7 +121,7 @@ public class Recv {
          * 设置用户密码，也可以不设置
          *  默认的用户密码是guest/guest
          */
-        factory.setUsername("zf");
+        factory.setUsername("test");
         factory.setPassword("123456");
 
 //      创建一个新的连接
