@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>dozf的博客</title>
+  
+  <subtitle>Dont&#39;t be the same,be better!</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.dozf.xyz/"/>
+  <updated>2019-08-05T09:17:17.419Z</updated>
+  <id>http://www.dozf.xyz/</id>
+  
+  <author>
+    <name>dozf</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Apache的架构师们遵循的30条设计原则</title>
+    <link href="http://www.dozf.xyz/2019/08/05/apache-design-principles/"/>
+    <id>http://www.dozf.xyz/2019/08/05/apache-design-principles/</id>
+    <published>2019-08-05T08:22:31.000Z</published>
+    <updated>2019-08-05T09:17:17.419Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>本文作者叫Srinath，是一位科学家，软件架构师，也是一名在分布式系统上工作的程序员。 他是Apache Axis2项目的联合创始人，也是Apache Software基金会的成员。 他是WSO2流处理器（wso2.com/analytics）的联席架构师。 Srinath撰写了两本关于MapReduce和许多技术文章的书。 他获得了博士学位。 来自美国印第安纳大学。</code></p><p>Srinath通过不懈的努力最终总结出了30条架构原则，他主张架构师的角色应该由开发团队本身去扮演，而不是专门有个架构师团队或部门。Srinath认为架构师应该扮演的角色是一个引导者，讨论发起者，花草修建者，而不是定义者和构建者。Srinath为了解决团队内部的架构纷争和抉择，制定了以下30条原则，这些原则被成员们广泛认可，也成为了新手架构师的学习途径。</p><h2 id="基本原则"><a href="#基本原则" class="headerlink" title="基本原则"></a>基本原则</h2><p><strong>原则1</strong>：KISS(Keep it simple,sutpid) 和保持每件事情都尽可能的简单。用最简单的解决方案来解决问题。</p><blockquote><p>分析：解决一个计算机问题最简单的方法：“恰好”不需要解决它！</p></blockquote><a id="more"></a><p><strong>原则2</strong>：YAGNI(You aren’t gonna need it)-不要去搞一些不需要的东西，需要的时候再搞吧。</p><p><strong>原则3</strong>：爬，走，跑。换句话说就是先保证跑通，然后再优化变得更好，然后继续优化让其变得伟大。迭代着去做事情，敏捷开发的思路。对于每个功能点，创建里程碑（最大两周），然后去迭代。</p><blockquote><p>分析：再随便的里程碑也比没有强！！！</p></blockquote><p><strong>原则4</strong>：创建稳定、高质量的产品的唯一方法就是自动化测试。所有的都可以自动化，当你设计时，不妨想想这一点。</p><p><strong>原则5</strong>：时刻要想投入产出比（ROI）。就是划得来不。</p><p><strong>原则6</strong>：了解你的用户，然后基于此来平衡你需要做哪些事情。不要花了几个月时间做了一个devops用户界面，最后你发现那些人只喜欢命令行。此原则是原则5的一个具体表现。</p><p><strong>原则7</strong>：设计和测试一个功能得尽可能的独立。当你做设计时，应该想想这一条。从长远来看这能给你解决很多问题，否则你的功能只能等待系统其他所有的功能都就绪了才能测试，这显然很不好。有了这个原则， 你的版本将会更加的顺畅。</p><p><strong>原则8</strong>：不要搞花哨的。我们都喜欢高端炫酷的设计。最后我们搞了很多功能和解决方案到我们的架构中，然后这些东西根本不会被用到。</p><h2 id="功能选择"><a href="#功能选择" class="headerlink" title="功能选择"></a>功能选择</h2><p><strong>原则9</strong>：不可能预测到用户将会如何使用我们的产品。所以要拥抱MVP（Minimal Viable Product），最小可运行版本。这个观点主要思想就是你挑几个很少的使用场景，然后把它搞出来，然后发布上线让用户使用，然后基于体验和用户反馈再决定下一步要做什么。</p><p><strong>原则10</strong>：尽可能的做较少的功能。当有疑问的时候，就不要去做，甚至干掉。很多功能从来不会被使用。最多留个扩展点就够了。</p><blockquote><p>PM可能不这么认为，但我们可以拿数据说话</p></blockquote><p><strong>原则11</strong>：等到有人提出再说（除非是影响核心流程，否则就等到需要的时候再去做）。</p><p><strong>原则12</strong>：有时候你要有勇气和客户说不。这时候你需要找到一个更好的解决方案来去解决。记住亨利福特曾经说过的 ：”如果我问人们他们需要什么，他们会说我需要一匹速度更快的马”。记住：你是那个专家，你要去引导和领导。要去做正确的事情，而不是流行的事情。最终用户会感谢你为他们提供了汽车。</p><h2 id="服务端设计和并发"><a href="#服务端设计和并发" class="headerlink" title="服务端设计和并发"></a>服务端设计和并发</h2><p><strong>原则13</strong>：要知道一个server是如何运行的，从硬件到操作系统，直到编程语言。优化IO调用的数量是你通往最好架构的首选之路。</p><p><strong>原则14</strong>：要了解Amdhal同步定律。在线程之间共享可变数据会让你的程序变慢。只在必要的时候才去使用并发的数据结构，只在必须使用同步（synchronization）的时候才去使用同步。如果要用锁，也要确保尽可能少的时间去hold住锁。如果要在加锁后做一些事情，要确保自己在锁内会做哪些事情。</p><blockquote><p>确保锁的最小细粒度</p></blockquote><p><strong>原则15</strong>：如果你的设计是一个无阻塞且事件驱动的架构，那么千万不要阻塞线程或者在这些线程中做一些IO操作，如果你做了，你的系统会慢的像骡子一样。</p><h2 id="分布式系统"><a href="#分布式系统" class="headerlink" title="分布式系统"></a>分布式系统</h2><p><strong>原则16</strong>：无状态的系统的是可扩展的和直接的。任何时候都要考虑这一点，不要搞个不可扩展的，有状态的东东出来，这是起码的。</p><p><strong>原则17</strong>：保证消息只被传递一次，不管失败，这很难，除非你要在客户端和服务端都做控制。试着让你的系统更轻便（使用原则18）。你要知道大部分的承诺exactly-once-delivery的系统都是做了精简的。</p><p><strong>原则18</strong>：实现一个操作尽可能的幂等。这样的话就比较好恢复，而且你还处于至少一次传递（at least once delivery）的状态。</p><p><strong>原则19</strong>：知道CAP理论。可扩展的事务（分布式事务）是很难的。如果可能的的话，尽可能的使用补偿机制。RDBMS事务是无法扩展的。</p><p><strong>原则20</strong>：分布式一致性无法扩展，也无法进行组通信，也无法进行集群范围内的可靠通信。理想情况下最大的节点限制为8个节点。</p><p><strong>原则21</strong>：在分布式系统中，你永远无法避免延迟和失败。</p><h2 id="用户体验"><a href="#用户体验" class="headerlink" title="用户体验"></a>用户体验</h2><p><strong>原则22</strong>：要了解你的用户和清楚他们的目标。他们是新手、专家还是偶然的用户？他们了解计算机科学的程度。极客喜欢扩展点，开发者喜欢示例和脚本，而普通人则喜欢UI。</p><p><strong>原则23</strong>：最好的产品是不需要产品手册的。</p><p><strong>原则24</strong>：当你无法在两个选择中做决定的时候，请不要直接把这个问题通过提供配置选项的方式传递给用户。这样只能让用户更加的发懵。如果连你这个专家都无法选择的情况下，交给一个比你了解的还少的人这样合适吗？最好的做法的是每次都找到一个可行的选项；次好的做法是自动的给出选项，第三好的做法是增加一个配置参数，然后设置一个合理的默认值。</p><p><strong>原则25</strong>：总是要为配置设置一个合理的默认值。</p><p><strong>原则26</strong>：设计不良的配置会造成一些困扰。应该总是为配置提供一些示例值。</p><p><strong>原则27</strong>：配置值必须是用户能够理解和直接填写的。比如：不能让用户填写最大缓存条目的数量，而是应该让用户填写可被用于缓存的最大内存。</p><p><strong>原则28</strong>：如果输入了未知的配置要抛出错误。永远不要悄悄的忽略。悄悄的忽略配置错误往往是找bug花了数小时的罪魁祸首。</p><h2 id="艰难的问题"><a href="#艰难的问题" class="headerlink" title="艰难的问题"></a>艰难的问题</h2><p><strong>原则29</strong>：梦想着新的编程语言就会变得简单和明了，但往往要想真正掌握会很难。不要轻易的去换编程语言。</p><p><strong>原则30</strong>：复杂的拖拉拽的界面是艰难的，不要去尝试这样的效果，除非你准备好了10人年的团队。</p><p>最后，说一个我的感受。在一个理想的世界里，一个平台应该是有多个正交组件组成-每个组件都负责一个方面（比如，security，messaging，registry，mdidation，analytics）。好像一个系统构建成这样才是完美的。但不幸的是，现实中我们很难达到这样的状态。因为在项目初始状态时，很多事情是不确定的，你无法做到这样的独立性，现在我更倾向于在开始的时候适当的重复是必要的，当你尝试铲除他们的时候，你会发现引入了新的复杂性，分布本身就意味着复杂。有时候治愈的过程要比疾病本身更加的糟糕。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>作为一个架构师，应该像园丁一般，更多的是修剪花草，除草而不是去定义和构建，你应该策划而不是指挥，你应该去修剪而不是去定义，应该是讨论而不是贴标签。虽然在短期内可能会觉得也没什么，但从长远看，指导团队找到自己的方式会带来好处。如果你稍不留神，就很容易让架构成为一个空洞的词汇。比如设计者会说他的架构是错误的，但不知道为什么是错误的。一个避免这种情况的好办法就是有一个原则列表，这个原则列表是被广泛接受的，这个列表是人们讨论问题的锚点，也是新手架构师学习的路径。</p><p>来源：</p><p><a href="https://mp.weixin.qq.com/s?__biz=MzA5MzQ2NTY0OA==&amp;mid=2650798277&amp;idx=1&amp;sn=97afe157dc1627713b729d9ef058b477&amp;key=ff09d031d7c4257b64b553ffa39ec2898f3acca42bef27d43fca8492dc5c171cd2acfdb8c4f63fd175f61ecaaac0e1fb7e02cc32fce5acd43f598d50f60451e04bf3b2096682c7dafe255e41e5ef048f&amp;ascene=1&amp;uin=MTk2NDQzMzAyMg%3D%3D&amp;devicetype=Windows+10&amp;version=62060833&amp;lang=zh_CN&amp;pass_ticket=KdFI3yJHZJMvWt7EJj%2FM7WfrVTOin5%2Bd%2BYk46JFFvui4U8LADHjuQ3s9r2IxhZ3F" target="_blank" rel="noopener">Apache的架构师们遵循的30条设计原则</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;本文作者叫Srinath，是一位科学家，软件架构师，也是一名在分布式系统上工作的程序员。 他是Apache Axis2项目的联合创始人，也是Apache Software基金会的成员。 他是WSO2流处理器（wso2.com/analytics）的联席架构师。 Srinath撰写了两本关于MapReduce和许多技术文章的书。 他获得了博士学位。 来自美国印第安纳大学。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Srinath通过不懈的努力最终总结出了30条架构原则，他主张架构师的角色应该由开发团队本身去扮演，而不是专门有个架构师团队或部门。Srinath认为架构师应该扮演的角色是一个引导者，讨论发起者，花草修建者，而不是定义者和构建者。Srinath为了解决团队内部的架构纷争和抉择，制定了以下30条原则，这些原则被成员们广泛认可，也成为了新手架构师的学习途径。&lt;/p&gt;
+&lt;h2 id=&quot;基本原则&quot;&gt;&lt;a href=&quot;#基本原则&quot; class=&quot;headerlink&quot; title=&quot;基本原则&quot;&gt;&lt;/a&gt;基本原则&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;原则1&lt;/strong&gt;：KISS(Keep it simple,sutpid) 和保持每件事情都尽可能的简单。用最简单的解决方案来解决问题。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;分析：解决一个计算机问题最简单的方法：“恰好”不需要解决它！&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://www.dozf.xyz/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="设计" scheme="http://www.dozf.xyz/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CAP理论和BASE理论总结</title>
+    <link href="http://www.dozf.xyz/2018/07/23/cap-and-base-theory/"/>
+    <id>http://www.dozf.xyz/2018/07/23/cap-and-base-theory/</id>
+    <published>2018-07-23T01:16:19.000Z</published>
+    <updated>2019-08-05T07:58:32.717Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一、CAP理论"><a href="#一、CAP理论" class="headerlink" title="一、CAP理论"></a>一、CAP理论</h3><p>CAP理论：一个分布式系统不可能同时满足一致性（C：Consistency）、可用性（A：Availability）和分区容错性（P：Partition tolerance）这三个基本需求，最多只能同时满足其中两项。这是一个经典的分布式系统理论。</p><blockquote><p>一致性（Consistency）</p></blockquote><p>在分布式环境下，一致性是指数据在多个节点之间能否保持一致的特性。在一致性的需求下，当一个系统在数据一致的状态下执行更新操作后，应该保证系统的数据仍然处于一致的状态。即更新操作成功并返回客户端完成后，所有节点在同一时间的数据完全一致。<br>all nodes see the same data at the same time。</p><a id="more"></a><blockquote><p>可用性（Availability） </p></blockquote><p>可用性是指系统提供的服务必须一直处于可用的状态，对于用户的每一个操作请求总是能够在有限的时间内返回结果。这里的重点是”有限时间内”和”返回结果”。<br>Reads and writes always succeed。</p><blockquote><p>分区容错性（Partition tolerance） </p></blockquote><p>分布式系统在遇到某节点或网络分区故障的时候，仍然能够对外提供满足一致性和可用性的服务，除非是整个网络环境都发生了故障。<br>the system continues to operate despite arbitrary message loss or failure of part of the system。</p><h5 id="CAP权衡选择："><a href="#CAP权衡选择：" class="headerlink" title="CAP权衡选择："></a>CAP权衡选择：</h5><p>既然一个分布式系统无法同时满足一致性、可用性、分区容错性三个特点，所以我们就需要抛弃一样。<br>对于一个分布式系统而言，<code>分区容错性</code>是一个最基本的要求。但是没有绝对的，需要根据场景决定，适合的才是最好的！</p><table><thead><tr><th>选择</th><th>说明</th></tr></thead><tbody><tr><td>CA</td><td>放弃分区容错性，加强一致性和可用性，其实就是传统的单机数据库的选择</td></tr><tr><td>AP</td><td>放弃一致性（强一致性），追求分区容错性和可用性，这是很多分布式系统设计时的选择，例如很多NoSQL系统就是如此</td></tr><tr><td>CP</td><td>放弃可用性，追求一致性和分区容错性，基本不会选择，网络问题会直接让整个系统不可用</td></tr></tbody></table><h3 id="二、BASE理论"><a href="#二、BASE理论" class="headerlink" title="二、BASE理论"></a>二、BASE理论</h3><p>BASE是 Basically Available（基本可用）、Soft State（软状态）和 Eventual Consistency（最终一致性）三个短语的缩写。<br>BASE理论是对CAP理论的延伸，其核心思想是：即使无法做到强一致性（Strong Consistency，CAP的一致性就是强一致性），但每个应用都可以根据自身业务特点，采用适当的方式来使系统达到最终一致性（Eventual Consitency）。<br>接下来看一下BASE中的三要素：</p><blockquote><p>基本可用（Basically Available）</p></blockquote><p>基本可用是指分布式系统在出现故障的时候，允许损失部分可用性，即保证核心可用(注意，这绝不等价于系统不可用)。<br>比如：电商大促时，为了应对访问量激增，部分用户可能会被引导到降级页面，服务层也可能只提供降级服务。这就是损失部分可用性的体现。</p><blockquote><p>软状态（ Soft State） </p></blockquote><p>软状态是指允许系统存在中间状态，而该中间状态不会影响系统整体可用性。分布式存储中一般一份数据至少会有三个副本，允许不同节点间副本同步的延时就是软状态的体现。mysql replication的异步复制也是一种体现。</p><blockquote><p>最终一致性（ Eventual Consistency） </p></blockquote><p>最终一致性是指系统中的所有数据副本经过一定时间后，最终能够达到一致的状态。因此，最终一致性的本质是需要系统保证最终数据能够达到一致，而不需要实时保证系统数据的强一致性。弱一致性和强一致性相反，最终一致性是弱一致性的一种特殊情况。</p><p>总的来说，BASE理论面向的是大型高可用可扩展的分布式系统，和传统的事物ACID特性是相反的，它完全不同于ACID的强一致性模型，而是通过牺牲强一致性来获得可用性，并允许数据在一段时间内是不一致的，但最终达到一致状态。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一、CAP理论&quot;&gt;&lt;a href=&quot;#一、CAP理论&quot; class=&quot;headerlink&quot; title=&quot;一、CAP理论&quot;&gt;&lt;/a&gt;一、CAP理论&lt;/h3&gt;&lt;p&gt;CAP理论：一个分布式系统不可能同时满足一致性（C：Consistency）、可用性（A：Availability）和分区容错性（P：Partition tolerance）这三个基本需求，最多只能同时满足其中两项。这是一个经典的分布式系统理论。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一致性（Consistency）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在分布式环境下，一致性是指数据在多个节点之间能否保持一致的特性。在一致性的需求下，当一个系统在数据一致的状态下执行更新操作后，应该保证系统的数据仍然处于一致的状态。即更新操作成功并返回客户端完成后，所有节点在同一时间的数据完全一致。&lt;br&gt;all nodes see the same data at the same time。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://www.dozf.xyz/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="分布式" scheme="http://www.dozf.xyz/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2017倒计时</title>
+    <link href="http://www.dozf.xyz/2017/12/29/diary-2017-1229/"/>
+    <id>http://www.dozf.xyz/2017/12/29/diary-2017-1229/</id>
+    <published>2017-12-29T07:28:24.000Z</published>
+    <updated>2019-08-05T07:58:32.717Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="再见，2017！你好，2018！"><a href="#再见，2017！你好，2018！" class="headerlink" title="再见，2017！你好，2018！"></a>再见，2017！你好，2018！</h3><p>2017已进入倒计时，2018成为更好的自己，加油！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;再见，2017！你好，2018！&quot;&gt;&lt;a href=&quot;#再见，2017！你好，2018！&quot; class=&quot;headerlink&quot; title=&quot;再见，2017！你好，2018！&quot;&gt;&lt;/a&gt;再见，2017！你好，2018！&lt;/h3&gt;&lt;p&gt;2017已进入倒计时，201
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.dozf.xyz/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RabbitMQ 入门--- Hello World</title>
+    <link href="http://www.dozf.xyz/2017/09/14/rabbitmq-helleWorld/"/>
+    <id>http://www.dozf.xyz/2017/09/14/rabbitmq-helleWorld/</id>
+    <published>2017-09-14T09:45:19.000Z</published>
+    <updated>2019-08-05T07:58:32.718Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="专业术语说明"><a href="#专业术语说明" class="headerlink" title="专业术语说明"></a>专业术语说明</h2><p>在下图中，“P”是我们的生产者，“C”是我们的消费者。中间的框是队列代表消费者的消息缓冲区。</p><div align="center"><br><img src="/assets/images/blogs/rabbitmq/java-one.png" alt><br></div><p><code>生产者:</code> 生产者只发送。发送消息的程序称之为一个生产者。</p><p><code>队列:</code> 队列就好比邮箱。虽然消息通过 RabbitMQ 在你的应用中传递，但是它们只能存储在队列中。队列只受主机的内存和磁盘的限制，它本质上是一个大的消息缓冲区。多个生产者可以将消息发送到同一个队列中，多个消费者也可以只从同一个队列接收数据。</p><a id="more"></a><p><code>消费者:</code> 等待接收消息的程序是一个消费者。</p><p><strong>注意：</strong><br>生产者，消费者和队列（RabbitMQ）不必部署在同一台机器上。实际在生产环境的大多数应用中，他们都是分开部署的。</p><p><strong>创建Maven项目，只需要添加如下依赖：</strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.rabbitmq<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>amqp-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p><h3 id="消息生产者"><a href="#消息生产者" class="headerlink" title="消息生产者"></a>消息生产者</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.rabbitmq.client.Channel;</span><br><span class="line"><span class="keyword">import</span> com.rabbitmq.client.Connection;</span><br><span class="line"><span class="keyword">import</span> com.rabbitmq.client.ConnectionFactory;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 消息生产者</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Send</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String QUEUE_NAME = <span class="string">"hello"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] argv)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">// 创建连接工厂</span></span><br><span class="line">        ConnectionFactory factory = <span class="keyword">new</span> ConnectionFactory();</span><br><span class="line"><span class="comment">//      设置RabbitMQ地址</span></span><br><span class="line">        factory.setHost(<span class="string">"localhost"</span>);</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 设置用户密码，也可以不设置</span></span><br><span class="line"><span class="comment">         *  默认的用户密码是guest/guest</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        factory.setUsername(<span class="string">"test"</span>);</span><br><span class="line">        factory.setPassword(<span class="string">"123456"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//      创建一个新的连接</span></span><br><span class="line">        Connection connection = factory.newConnection();</span><br><span class="line"><span class="comment">//      创建一个频道</span></span><br><span class="line">        Channel channel = connection.createChannel();</span><br><span class="line"></span><br><span class="line"><span class="comment">//      声明一个队列 -- 在RabbitMQ中，队列声明是幂等性的（一个幂等操作的特点是其任意多次执行所产生的影响均与一次执行的影响相同），也就是说，如果不存在，就创建，如果存在，不会对已经存在的队列产生任何影响。</span></span><br><span class="line">        <span class="comment">// queueDeclare(String queue, boolean durable, boolean exclusive, boolean autoDelete, Map&lt;String, Object&gt; arguments)</span></span><br><span class="line">        <span class="comment">// 参数1 queue ：队列名</span></span><br><span class="line">        <span class="comment">// 参数2 durable ：是否持久化</span></span><br><span class="line">        <span class="comment">// 参数3 exclusive ：仅创建者可以使用的私有队列，断开后自动删除</span></span><br><span class="line">        <span class="comment">// 参数4 autoDelete : 当所有消费客户端连接断开后，是否自动删除队列</span></span><br><span class="line">        <span class="comment">// 参数5 arguments</span></span><br><span class="line">        channel.queueDeclare(QUEUE_NAME, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">null</span>);</span><br><span class="line">        String message = <span class="string">"Hello World!"</span>;</span><br><span class="line"><span class="comment">//      发送消息到队列中</span></span><br><span class="line">  <span class="comment">// basicPublish(String exchange, String routingKey, BasicProperties props, byte[] body)</span></span><br><span class="line">        <span class="comment">// 参数1 exchange ：交换器</span></span><br><span class="line">        <span class="comment">// 参数2 routingKey ： 路由键</span></span><br><span class="line">        <span class="comment">// 参数3 props ： 消息的其他参数</span></span><br><span class="line">        <span class="comment">// 参数4 body ： 消息体，是一个字节数组，也就意味着可以传递任何数据。</span></span><br><span class="line">        channel.basicPublish(<span class="string">""</span>, QUEUE_NAME, <span class="keyword">null</span>, message.getBytes(<span class="string">"UTF-8"</span>));</span><br><span class="line">        System.out.println(<span class="string">"消息生产者 P [x] Sent '"</span> + message + <span class="string">"'"</span>);</span><br><span class="line"><span class="comment">//      关闭频道和连接</span></span><br><span class="line">        channel.close();</span><br><span class="line">        connection.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="消息消费者"><a href="#消息消费者" class="headerlink" title="消息消费者"></a>消息消费者</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.rabbitmq.client.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 消息消费者</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Recv</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String QUEUE_NAME = <span class="string">"hello"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] argv)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">// 创建连接工厂</span></span><br><span class="line">        ConnectionFactory factory = <span class="keyword">new</span> ConnectionFactory();</span><br><span class="line"><span class="comment">//      设置RabbitMQ地址</span></span><br><span class="line">        factory.setHost(<span class="string">"localhost"</span>);</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 设置用户密码，也可以不设置</span></span><br><span class="line"><span class="comment">         *  默认的用户密码是guest/guest</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        factory.setUsername(<span class="string">"test"</span>);</span><br><span class="line">        factory.setPassword(<span class="string">"123456"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//      创建一个新的连接</span></span><br><span class="line">        Connection connection = factory.newConnection();</span><br><span class="line"><span class="comment">//      创建一个频道</span></span><br><span class="line">        Channel channel = connection.createChannel();</span><br><span class="line"><span class="comment">//      声明要关注的队列 -- 在RabbitMQ中，队列声明是幂等性的（一个幂等操作的特点是其任意多次执行所产生的影响均与一次执行的影响相同），也就是说，如果不存在，就创建，如果存在，不会对已经存在的队列产生任何影响。</span></span><br><span class="line">        channel.queueDeclare(QUEUE_NAME, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">null</span>);</span><br><span class="line">        System.out.println(<span class="string">"消息消费者 C [*] Waiting for messages. To exit press CTRL+C"</span>);</span><br><span class="line"><span class="comment">//      DefaultConsumer类实现了Consumer接口，通过传入一个频道，告诉服务器我们需要那个频道的消息，如果频道中有消息，就会执行回调函数handleDelivery</span></span><br><span class="line">        Consumer consumer = <span class="keyword">new</span> DefaultConsumer(channel) &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleDelivery</span><span class="params">(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, <span class="keyword">byte</span>[] body)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">                String message = <span class="keyword">new</span> String(body, <span class="string">"UTF-8"</span>);</span><br><span class="line">                System.out.println(<span class="string">"消息消费者 C [x] Received '"</span> + message + <span class="string">"'"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"><span class="comment">//      自动回复队列应答 -- RabbitMQ中的消息确认机制</span></span><br><span class="line">       <span class="comment">// basicConsume(String queue, boolean autoAck, Consumer callback)</span></span><br><span class="line">        <span class="comment">// 参数1 queue ：队列名</span></span><br><span class="line">        <span class="comment">// 参数2 autoAck ： 是否自动ACK</span></span><br><span class="line">        <span class="comment">// 参数3 callback ： 消费者对象的一个接口，用来配置回调</span></span><br><span class="line">        channel.basicConsume(QUEUE_NAME, <span class="keyword">true</span>, consumer);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="测试："><a href="#测试：" class="headerlink" title="测试："></a>测试：</h3><p>1.双击【RabbitMQ Server\rabbitmq_server-3.6.12\sbin】目录下的rabbitmq-server.bat，来启动RabbitMQ服务。<br>2.运行消费者服务器来关注【hello】这个队列的情况。<br>3.再运行生产者端，发送消息到队列中。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;专业术语说明&quot;&gt;&lt;a href=&quot;#专业术语说明&quot; class=&quot;headerlink&quot; title=&quot;专业术语说明&quot;&gt;&lt;/a&gt;专业术语说明&lt;/h2&gt;&lt;p&gt;在下图中，“P”是我们的生产者，“C”是我们的消费者。中间的框是队列代表消费者的消息缓冲区。&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img src=&quot;/assets/images/blogs/rabbitmq/java-one.png&quot; alt&gt;&lt;br&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;生产者:&lt;/code&gt; 生产者只发送。发送消息的程序称之为一个生产者。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;队列:&lt;/code&gt; 队列就好比邮箱。虽然消息通过 RabbitMQ 在你的应用中传递，但是它们只能存储在队列中。队列只受主机的内存和磁盘的限制，它本质上是一个大的消息缓冲区。多个生产者可以将消息发送到同一个队列中，多个消费者也可以只从同一个队列接收数据。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://www.dozf.xyz/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="RabbitMQ" scheme="http://www.dozf.xyz/tags/RabbitMQ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git 命令小结</title>
+    <link href="http://www.dozf.xyz/2017/09/07/git-command/"/>
+    <id>http://www.dozf.xyz/2017/09/07/git-command/</id>
+    <published>2017-09-07T07:02:36.000Z</published>
+    <updated>2019-08-05T07:58:32.718Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、Configuration-配置"><a href="#一、Configuration-配置" class="headerlink" title="一、Configuration:配置"></a>一、Configuration:配置</h2><ul><li><p>列举所有的别名与配置</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br></pre></td></tr></table></figure></li><li><p>编辑配置文件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">格式：git config [–<span class="built_in">local</span>|–global|–system] -e</span><br><span class="line">$ git config -e 默认是编辑仓库级的配置文件</span><br></pre></td></tr></table></figure></li></ul><a id="more"></a><h2 id="二、分支"><a href="#二、分支" class="headerlink" title="二、分支"></a>二、分支</h2><p>查看分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br></pre></td></tr></table></figure></p><p>创建分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch &lt;name&gt;</span><br></pre></td></tr></table></figure></p><p>切换分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout &lt;name&gt;</span><br></pre></td></tr></table></figure></p><p>创建+切换分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b &lt;name&gt;</span><br></pre></td></tr></table></figure></p><p>合并某分支到当前分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge &lt;name&gt;</span><br></pre></td></tr></table></figure></p><p>删除分支：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d &lt;name&gt;</span><br></pre></td></tr></table></figure></p><h2 id="三、版本回退"><a href="#三、版本回退" class="headerlink" title="三、版本回退"></a>三、版本回退</h2><ul><li><p>查看版本历史记录：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span></span><br></pre></td></tr></table></figure></li><li><p>回退到某个版本(使用HEAD)</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD </span><br><span class="line">git reset --hard HEAD^</span><br></pre></td></tr></table></figure></li></ul><p>首先，Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前版本，也就是最新的提交。<br>上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100</p><ul><li>回退到某个版本(具体ID)<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset --hard 3628164</span><br></pre></td></tr></table></figure></li></ul><p>版本号没必要写全，前几位就可以了，Git会自动去找。当然也不能只写前一两位，因为Git可能会找到多个版本号，就无法确定是哪一个了。<br>当然还能重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。</p><h3 id="想了解更多，可以去看相关资料："><a href="#想了解更多，可以去看相关资料：" class="headerlink" title="想了解更多，可以去看相关资料："></a>想了解更多，可以去看相关资料：</h3><ul><li><a href="http://git-scm.com/book/zh/v2" target="_blank" rel="noopener">Git中文文档</a></li><li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git教程 - 廖雪峰的官方网站</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;一、Configuration-配置&quot;&gt;&lt;a href=&quot;#一、Configuration-配置&quot; class=&quot;headerlink&quot; title=&quot;一、Configuration:配置&quot;&gt;&lt;/a&gt;一、Configuration:配置&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;列举所有的别名与配置&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git config --list&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;编辑配置文件&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;格式：git config [–&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;|–global|–system] -e&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ git config -e 默认是编辑仓库级的配置文件&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://www.dozf.xyz/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Git" scheme="http://www.dozf.xyz/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随记 2017-09-06</title>
+    <link href="http://www.dozf.xyz/2017/09/06/diary-2017-0906/"/>
+    <id>http://www.dozf.xyz/2017/09/06/diary-2017-0906/</id>
+    <published>2017-09-06T11:29:25.000Z</published>
+    <updated>2019-08-05T07:58:32.717Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/assets/images/blogs/diary-1.jpg" alt></p><h2 id="人生感悟"><a href="#人生感悟" class="headerlink" title="人生感悟"></a>人生感悟</h2><p>一盏灯， 一片昏黄； 一简书， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/assets/images/blogs/diary-1.jpg&quot; alt&gt;&lt;/p&gt;
+&lt;h2 id=&quot;人生感悟&quot;&gt;&lt;a href=&quot;#人生感悟&quot; class=&quot;headerlink&quot; title=&quot;人生感悟&quot;&gt;&lt;/a&gt;人生感悟&lt;/h2&gt;&lt;p&gt;一盏灯， 一
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://www.dozf.xyz/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+</feed>
