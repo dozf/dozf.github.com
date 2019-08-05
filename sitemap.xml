@@ -4,7 +4,7 @@
   <url>
     <loc>http://www.dozf.xyz/2019/08/05/apache-design-principles/</loc>
     
-    <lastmod>2019-08-05T09:17:17.419Z</lastmod>
+    <lastmod>2019-08-05T09:30:59.938Z</lastmod>
     
   </url>
   
@@ -16,13 +16,6 @@
   </url>
   
   <url>
-    <loc>http://www.dozf.xyz/2017/09/07/git-command/</loc>
-    
-    <lastmod>2019-08-05T07:58:32.718Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.dozf.xyz/2017/09/14/rabbitmq-helleWorld/</loc>
     
     <lastmod>2019-08-05T07:58:32.718Z</lastmod>
@@ -30,9 +23,9 @@
   </url>
   
   <url>
-    <loc>http://www.dozf.xyz/2017/12/29/diary-2017-1229/</loc>
+    <loc>http://www.dozf.xyz/2017/09/07/git-command/</loc>
     
-    <lastmod>2019-08-05T07:58:32.717Z</lastmod>
+    <lastmod>2019-08-05T07:58:32.718Z</lastmod>
     
   </url>
   
@@ -45,6 +38,13 @@
   
   <url>
     <loc>http://www.dozf.xyz/2017/09/06/diary-2017-0906/</loc>
+    
+    <lastmod>2019-08-05T07:58:32.717Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.dozf.xyz/2017/12/29/diary-2017-1229/</loc>
     
     <lastmod>2019-08-05T07:58:32.717Z</lastmod>
     
